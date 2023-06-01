@@ -78,19 +78,20 @@ private:
     }
 
     // вспомогательный метод для вывода узла в виде дерева
-    void printNode(Node* node, int indent) {
+    void printTree(Node* node, int level = 0) {
         if (node == nullptr) {
             return;
         }
-        std::cout << std::string(indent, ' ') << node->data << std::endl;
-        if (node->left != nullptr || node->right != nullptr) {
-            std::cout << std::string(indent, ' ') << "|\n";
+
+        printTree(node->right, level + 1);
+
+        for (int i = 0; i < level; i++) {
+            std::cout << "|   ";
         }
-        printNode(node->left, indent + 4);
-        if (node->left != nullptr && node->right != nullptr) {
-            std::cout << std::string(indent, ' ') << "|\n";
-        }
-        printNode(node->right, indent + 4);
+
+        std::cout << "+---" << node->data << std::endl;
+
+        printTree(node->left, level + 1);
     }
 
 public:
@@ -113,6 +114,6 @@ public:
 
     // метод для вывода дерева в консоль
     void print() {
-        printNode(root, 0);
+        printTree(root);
     }
 };
