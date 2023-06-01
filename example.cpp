@@ -1,4 +1,4 @@
-
+// Код программы для тестирования функционала, автор: Жуков Даниил
 #include "includes.h"
 #include "bin_tree.h"
 #include "fazmerge.h"
