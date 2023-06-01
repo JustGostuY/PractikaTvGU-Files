@@ -52,7 +52,7 @@ public:
     void print() {
         for (int i = 0; i < size; i++) {
             if (table[i] != -1) {
-                std::cout << i << " : " << table[i] << std::endl;
+                std::cout << i << " : " << hash(table[i]) << std::endl;
             }
         }
     }
