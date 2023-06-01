@@ -6,3 +6,5 @@
 #include <functional>
 #include <Windows.h>
 #include <fstream>
+#include <cmath>
+#include <sstream>
